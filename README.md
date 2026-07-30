@@ -1,29 +1,47 @@
-# Welcome to your Lovable project
+# Contentful Manager — Website
 
-This project was built with [Lovable](https://lovable.dev).
+Marketing and download site for the **Contentful Manager** desktop app for macOS
+and Windows.
 
-## Build with Lovable
-
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+Built with TanStack Start, React, TypeScript, and Tailwind CSS.
 
 ## Development
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Requires Node.js 20+ (or Bun).
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+npm install
 npm run dev
 ```
 
-## Built with
+## Build
 
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
+```sh
+npm run build      # production build (output in .output/)
+npm run preview    # preview the production build
+```
+
+## Configuration
+
+Release and download values live in `src/lib/site-config.ts`:
+
+- `VERSION` — app version shown on the site.
+- `MAC_DOWNLOAD_URL` / `WINDOWS_DOWNLOAD_URL` — installer download links.
+- `SITE_URL` — canonical site URL (used for SEO / Open Graph tags).
+- `FAQS` — FAQ content (also emitted as FAQ structured data).
+
+The macOS `.dmg` is hosted as a GitHub Release asset rather than committed to the
+repo (installers exceed GitHub's 100 MB file limit). Update `MAC_DOWNLOAD_URL`
+whenever you publish a new release.
+
+## Project structure
+
+- `src/routes/` — pages and the root document (`__root.tsx`).
+- `src/components/` — UI components and page sections.
+- `src/lib/` — shared config and helpers.
+- `src/assets/` — logo and screenshots.
+- `public/` — static assets (favicon, robots.txt).
+
+## License
+
+Not affiliated with Contentful GmbH. Contentful is a trademark of its owner.
