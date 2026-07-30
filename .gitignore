@@ -36,5 +36,3 @@ public/downloads/
 *.dmg
 *.exe
 
-# Lovable local metadata
-.lovable/
