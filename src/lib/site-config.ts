@@ -4,9 +4,10 @@ export const VERSION = "0.1.0";
 
 export const SITE_URL = ""; // e.g. "https://contentful-manager.app" — leave empty to use relative URLs
 
-// The macOS build is served from the site's public/downloads folder.
+// The macOS build is hosted as a GitHub Release asset.
 // TODO: host a Windows .exe build and point WINDOWS_DOWNLOAD_URL at it.
-export const MAC_DOWNLOAD_URL = "/downloads/Contentful%20Manager-0.1.0-arm64.dmg";
+export const MAC_DOWNLOAD_URL =
+  "https://github.com/jovialp/Contentful-manager-web/releases/download/0.1.0/Contentful.Manager-0.1.0-arm64.dmg";
 export const WINDOWS_DOWNLOAD_URL = "#download";
 
 export const MAC_FILENAME = `Contentful Manager-${VERSION}-arm64.dmg`;
