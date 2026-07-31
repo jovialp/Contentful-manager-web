@@ -8,7 +8,8 @@ export const SITE_URL = ""; // e.g. "https://contentful-manager.app" — leave e
 // TODO: host a Windows .exe build and point WINDOWS_DOWNLOAD_URL at it.
 export const MAC_DOWNLOAD_URL =
   "https://github.com/jovialp/Contentful-manager-web/releases/download/0.1.0/Contentful.Manager-0.1.0-arm64.dmg";
-export const WINDOWS_DOWNLOAD_URL = "#download";
+export const WINDOWS_DOWNLOAD_URL =
+  "https://github.com/jovialp/Contentful-manager-web/releases/download/0.1.0/Contentful.Manager-0.1.0.Windows.Portable.zip";
 
 export const MAC_FILENAME = `Contentful Manager-${VERSION}-arm64.dmg`;
 export const WINDOWS_FILENAME = `Contentful Manager Setup ${VERSION}.exe`;
@@ -45,7 +46,7 @@ export const FAQS: { question: string; answer: string }[] = [
   {
     question: "macOS says the app can’t be opened — how do I open it?",
     answer:
-      "The macOS build isn’t notarized yet, so Gatekeeper asks you to confirm on first launch. Open System Settings → Privacy & Security, then click “Open Anyway” next to Contentful Manager and confirm — you only need to do this once. Advanced users can instead remove the quarantine flag in Terminal: xattr -dr com.apple.quarantine \"/Applications/Contentful Manager.app\"",
+      'The macOS build isn’t notarized yet, so Gatekeeper asks you to confirm on first launch. Open System Settings → Privacy & Security, then click “Open Anyway” next to Contentful Manager and confirm — you only need to do this once. Advanced users can instead remove the quarantine flag in Terminal: xattr -dr com.apple.quarantine "/Applications/Contentful Manager.app"',
   },
   {
     question: "Is my content sent to a third party?",
