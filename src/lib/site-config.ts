@@ -49,6 +49,11 @@ export const FAQS: { question: string; answer: string }[] = [
       'The macOS build isn’t notarized yet, so Gatekeeper asks you to confirm on first launch. Open System Settings → Privacy & Security, then click “Open Anyway” next to Contentful Manager and confirm — you only need to do this once. Advanced users can instead remove the quarantine flag in Terminal: xattr -dr com.apple.quarantine "/Applications/Contentful Manager.app"',
   },
   {
+    question: "Windows blocked the app with SmartScreen — how do I open it?",
+    answer:
+      'The Windows build isn’t code-signed yet, so SmartScreen warns on first launch. Unzip the downloaded file, open the Contentful Manager folder, and double-click Contentful Manager.exe. If a "Windows protected your PC" dialog appears, click "More info" and then "Run anyway" — you only need to do this once.',
+  },
+  {
     question: "Is my content sent to a third party?",
     answer:
       "No. Content flows directly between your computer and Contentful's API. There is no intermediary server, analytics pipeline, or third-party content processing.",

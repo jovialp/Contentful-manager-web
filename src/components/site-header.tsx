@@ -5,6 +5,7 @@ import { useTheme } from "@/hooks/use-theme";
 
 const links = [
   { href: "#features", label: "Features" },
+  { href: "#release-operations", label: "Release Ops" },
   { href: "#how-it-works", label: "How it works" },
   { href: "#download", label: "Download" },
   { href: "#faq", label: "FAQ" },

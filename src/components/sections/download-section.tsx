@@ -3,7 +3,11 @@ import { MAC_REQUIREMENTS, VERSION, WINDOWS_REQUIREMENTS } from "@/lib/site-conf
 
 export function DownloadSection() {
   return (
-    <section id="download" aria-labelledby="download-heading" className="mx-auto max-w-6xl px-4 py-20 md:py-28">
+    <section
+      id="download"
+      aria-labelledby="download-heading"
+      className="mx-auto max-w-6xl px-4 py-20 md:py-28"
+    >
       <div
         data-reveal
         className="reveal overflow-hidden rounded-3xl border border-border bg-card p-8 shadow-lift md:p-14"
@@ -36,24 +40,57 @@ export function DownloadSection() {
           </div>
         </dl>
 
-        <div className="mt-6 rounded-xl border border-border bg-secondary/40 p-4 text-sm">
-          <p className="font-semibold text-foreground">Opening on macOS</p>
-          <p className="mt-1 text-muted-foreground">
-            On first launch, macOS may block the app because it is not notarized
-            yet. Open{" "}
-            <span className="font-medium text-foreground">
-              System Settings → Privacy &amp; Security
-            </span>{" "}
-            and click{" "}
-            <span className="font-medium text-foreground">Open Anyway</span> next
-            to Contentful Manager. You only need to do this once.
-          </p>
-          <p className="mt-3 text-muted-foreground">
-            Or remove the quarantine flag from Terminal:
-          </p>
-          <code className="mt-2 block overflow-x-auto rounded-lg bg-background px-3 py-2 font-mono text-xs text-foreground">
-            {`xattr -dr com.apple.quarantine "/Applications/Contentful Manager.app"`}
-          </code>
+        <div className="mt-6 grid gap-4 md:grid-cols-2">
+          <div className="rounded-xl border border-border bg-secondary/40 p-4 text-sm">
+            <p className="font-semibold text-foreground">First launch on macOS</p>
+            <p className="mt-1 text-muted-foreground">
+              The macOS build isn’t notarized yet, so Gatekeeper blocks it the first time.
+            </p>
+            <ol className="mt-3 list-decimal space-y-1.5 pl-5 text-muted-foreground">
+              <li>
+                Open{" "}
+                <span className="font-medium text-foreground">
+                  System Settings → Privacy &amp; Security
+                </span>
+                .
+              </li>
+              <li>
+                Click <span className="font-medium text-foreground">Open Anyway</span> next to
+                Contentful Manager, then confirm.
+              </li>
+            </ol>
+            <p className="mt-3 text-xs text-muted-foreground">You only need to do this once.</p>
+            <p className="mt-3 text-muted-foreground">
+              Advanced: clear the quarantine flag in Terminal instead.
+            </p>
+            <code className="mt-2 block overflow-x-auto rounded-lg bg-background px-3 py-2 font-mono text-xs text-foreground">
+              {`xattr -dr com.apple.quarantine "/Applications/Contentful Manager.app"`}
+            </code>
+          </div>
+
+          <div className="rounded-xl border border-border bg-secondary/40 p-4 text-sm">
+            <p className="font-semibold text-foreground">First launch on Windows</p>
+            <p className="mt-1 text-muted-foreground">
+              The Windows build isn’t code-signed yet, so SmartScreen warns the first time.
+            </p>
+            <ol className="mt-3 list-decimal space-y-1.5 pl-5 text-muted-foreground">
+              <li>Unzip the downloaded ZIP file.</li>
+              <li>
+                Open the <span className="font-medium text-foreground">Contentful Manager</span>{" "}
+                folder.
+              </li>
+              <li>
+                Double-click{" "}
+                <span className="font-medium text-foreground">Contentful Manager.exe</span>.
+              </li>
+              <li>
+                If SmartScreen appears, click{" "}
+                <span className="font-medium text-foreground">More info</span>, then{" "}
+                <span className="font-medium text-foreground">Run anyway</span>.
+              </li>
+            </ol>
+            <p className="mt-3 text-xs text-muted-foreground">You only need to do this once.</p>
+          </div>
         </div>
       </div>
     </section>
