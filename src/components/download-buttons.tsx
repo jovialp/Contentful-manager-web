@@ -32,7 +32,6 @@ export function DownloadButtons({ size = "default", showFilenames = false, class
       <div className="flex flex-col gap-2">
         <a
           href={MAC_DOWNLOAD_URL}
-          download
           className={cn(base, dims, macRecommended || platform === "unknown" ? primary : secondary)}
         >
           <AppleIcon className="h-5 w-5" />

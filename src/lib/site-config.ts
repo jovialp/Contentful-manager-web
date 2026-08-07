@@ -12,7 +12,7 @@ export const WINDOWS_DOWNLOAD_URL =
   "https://github.com/jovialp/Contentful-manager-web/releases/download/0.1.0/Contentful.Manager-0.1.0.Windows.Portable.zip";
 
 export const MAC_FILENAME = `Contentful Manager-${VERSION}-arm64.dmg`;
-export const WINDOWS_FILENAME = `Contentful Manager Setup ${VERSION}.exe`;
+export const WINDOWS_FILENAME = `Contentful Manager Setup ${VERSION}.zip`;
 
 export const MAC_REQUIREMENTS = "macOS 11+ (Apple Silicon)";
 export const WINDOWS_REQUIREMENTS = "Windows 10/11 (64-bit)";
