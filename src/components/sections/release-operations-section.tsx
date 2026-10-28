@@ -1,4 +1,12 @@
-import { Eye, GitCompareArrows, Languages, ListChecks, Rocket, Settings2 } from "lucide-react";
+import {
+  ArchiveRestore,
+  Eye,
+  GitCompareArrows,
+  Languages,
+  ListChecks,
+  Rocket,
+  Settings2,
+} from "lucide-react";
 
 const operations = [
   {
@@ -25,6 +33,21 @@ const operations = [
     icon: Languages,
     title: "Translation Migration",
     body: "Copy translation entries that exist in one environment but not another. A searchable, sortable preview shows each entry's key, source value, content type and destination status — review, then add and publish in one click.",
+  },
+  {
+    icon: ArchiveRestore,
+    title: "Backup & Restore",
+    body: "Recover content from a backup environment — compare, choose exactly what to bring back, and restore safely without touching the rest.",
+    points: [
+      {
+        label: "Copy from Backup",
+        text: "Compare a single entry between a backup and a destination environment, then restore only the fields and locales you pick — with a diff before anything is written.",
+      },
+      {
+        label: "Restore Entry from Backup",
+        text: "Find entries that exist in a backup but are missing from the destination, and recreate them in one step.",
+      },
+    ],
   },
 ];
 
@@ -57,13 +80,16 @@ export function ReleaseOperationsSection() {
         <p className="text-sm font-semibold tracking-wide text-primary uppercase">
           Release Operations
         </p>
-        <h2 id="release-heading" className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">
+        <h2
+          id="release-heading"
+          className="mt-3 text-3xl font-bold tracking-tight md:text-4xl"
+        >
           Promote content and configuration between environments
         </h2>
         <p className="mt-4 text-lg text-muted-foreground">
-          An advanced module that appears once you pick a space — safely sync custom app IDs and
-          migrate translations from one environment to another, without hand-editing JSON or
-          touching the CLI.
+          An advanced module that appears once you pick a space — safely sync
+          custom app IDs, migrate translations, and restore content from backups
+          across environments, without hand-editing JSON or touching the CLI.
         </p>
       </div>
 
@@ -79,7 +105,9 @@ export function ReleaseOperationsSection() {
                 <Icon className="h-5 w-5" aria-hidden="true" />
               </span>
               <h3 className="mt-4 text-lg font-semibold">{title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{body}</p>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                {body}
+              </p>
 
               {points ? (
                 <ul className="mt-4 space-y-3 border-t border-border pt-4">
@@ -104,8 +132,8 @@ export function ReleaseOperationsSection() {
       >
         <p className="text-sm font-semibold">Safe by default</p>
         <p className="mt-1 text-sm text-muted-foreground">
-          Perform Mapping and Translation Migration never write blindly — they follow the same
-          three-step flow.
+          Mapping, migration, and restore operations never write blindly — they
+          all follow the same three-step flow.
         </p>
         <ol className="mt-6 grid gap-5 md:grid-cols-3">
           {workflow.map(({ icon: Icon, title, text }, i) => (
@@ -118,7 +146,9 @@ export function ReleaseOperationsSection() {
                   <Icon className="h-4 w-4 text-primary" aria-hidden="true" />
                   {title}
                 </p>
-                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{text}</p>
+                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                  {text}
+                </p>
               </div>
             </li>
           ))}

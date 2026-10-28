@@ -5,13 +5,15 @@ import { HeroSection } from "@/components/sections/hero-section";
 import { FeaturesSection } from "@/components/sections/features-section";
 import { ReleaseOperationsSection } from "@/components/sections/release-operations-section";
 import { HowItWorksSection } from "@/components/sections/how-it-works-section";
+import { PricingSection } from "@/components/sections/pricing-section";
 import { DownloadSection } from "@/components/sections/download-section";
 import { RoadmapSection } from "@/components/sections/roadmap-section";
 import { FaqSection } from "@/components/sections/faq-section";
 import { useReveal } from "@/hooks/use-reveal";
 import { FAQS, SITE_URL, VERSION } from "@/lib/site-config";
 
-const TITLE = "Contentful Manager — Desktop App for Contentful Export, Import & Localization";
+const TITLE =
+  "Contentful Manager — Desktop App for Contentful Export, Import & Localization";
 const DESCRIPTION =
   "Contentful Manager is a free macOS & Windows desktop app to export, import, localize and Excel-ify Contentful content. Contentful CLI bundled — download now.";
 const CANONICAL = SITE_URL || "/";
@@ -25,7 +27,7 @@ export const Route = createFileRoute("/")({
       {
         name: "keywords",
         content:
-          "Contentful desktop app, Contentful management tool, Contentful export, Contentful import, Contentful backup, Contentful CLI GUI, Contentful locale management, Contentful to Excel, Contentful content operations, Contentful release operations, Contentful environment sync, Contentful translation migration, Contentful custom app mapping",
+          "Contentful desktop app, Contentful management tool, Contentful export, Contentful import, Contentful publish entries, Contentful backup, Contentful restore from backup, Contentful field copy, Contentful CLI GUI, Contentful locale management, Contentful to Excel, Contentful content operations, Contentful release operations, Contentful environment sync, Contentful translation migration, Contentful custom app mapping",
       },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
@@ -77,6 +79,7 @@ function Index() {
         <FeaturesSection />
         <ReleaseOperationsSection />
         <HowItWorksSection />
+        <PricingSection />
         <DownloadSection />
         <RoadmapSection />
         <FaqSection />

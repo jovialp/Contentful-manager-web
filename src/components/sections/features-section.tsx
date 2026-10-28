@@ -1,8 +1,10 @@
 import {
   Download,
   Upload,
+  UploadCloud,
   Globe,
   FileSpreadsheet,
+  Copy,
   TerminalSquare,
   ShieldCheck,
   ListChecks,
@@ -22,6 +24,11 @@ const features = [
     body: "Import a folder of JSON into any environment, with pre-flight validation and per-file selection so you import exactly what you want.",
   },
   {
+    icon: UploadCloud,
+    title: "Publish All Entries",
+    body: "Publish every entry across all locales for the content types you choose, with a confirmation step and live progress.",
+  },
+  {
     icon: Globe,
     title: "Add Locale",
     body: "Create new locales with an optional fallback in a couple of clicks. Contentful locale management without touching the terminal.",
@@ -30,6 +37,11 @@ const features = [
     icon: FileSpreadsheet,
     title: "Generate Excel",
     body: "Convert an export into a multi-sheet Excel workbook, one sheet per locale, for translation review or client handoff.",
+  },
+  {
+    icon: Copy,
+    title: "Copy to New Field",
+    body: "Back-fill one field from another across a content type's entries, with a dry-run preview and per-entry diff before anything is written.",
   },
   {
     icon: TerminalSquare,
@@ -60,14 +72,24 @@ const features = [
 
 export function FeaturesSection() {
   return (
-    <section id="features" aria-labelledby="features-heading" className="mx-auto max-w-6xl px-4 py-20 md:py-28">
+    <section
+      id="features"
+      aria-labelledby="features-heading"
+      className="mx-auto max-w-6xl px-4 py-20 md:py-28"
+    >
       <div data-reveal className="reveal max-w-2xl">
-        <p className="text-sm font-semibold tracking-wide text-primary uppercase">Features</p>
-        <h2 id="features-heading" className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">
+        <p className="text-sm font-semibold tracking-wide text-primary uppercase">
+          Features
+        </p>
+        <h2
+          id="features-heading"
+          className="mt-3 text-3xl font-bold tracking-tight md:text-4xl"
+        >
           Everything a Contentful management tool should do
         </h2>
         <p className="mt-4 text-lg text-muted-foreground">
-          Contentful export, import, backup, localization, and Excel reporting — all from one
+          Contentful export, import, publish, backup &amp; restore,
+          localization, field back-fills, and Excel reporting — all from one
           desktop app built for content operations teams.
         </p>
       </div>
@@ -84,7 +106,9 @@ export function FeaturesSection() {
                 <Icon className="h-5 w-5" aria-hidden="true" />
               </span>
               <h3 className="mt-4 text-lg font-semibold">{title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{body}</p>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                {body}
+              </p>
             </article>
           </li>
         ))}

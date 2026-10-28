@@ -21,7 +21,17 @@ export const FAQS: { question: string; answer: string }[] = [
   {
     question: "Is Contentful Manager free?",
     answer:
-      "Yes. Contentful Manager is free to download and use for macOS and Windows. You only need your own Contentful account and a Management API token.",
+      "The app is free to download. After you sign in with Google or Microsoft, the Free plan includes 10 operations so you can try it out. Paid plans — Starter, Pro and Business — add more operations, with higher plans including more. You always use your own Contentful account and Management API token.",
+  },
+  {
+    question: "Do I need to sign in to use it?",
+    answer:
+      "Yes. You sign in with your Google or Microsoft account the first time you open the app. It is only used to identify your account and track your plan and remaining operations — your Contentful token and content never pass through it.",
+  },
+  {
+    question: "What counts as an operation?",
+    answer:
+      "Each real run — an export, import, publish, add-locale, field copy, translation migration, backup restore, and so on — uses one operation from your plan. Previews and dry-runs are free and never count. When you run out, pick a plan to add more.",
   },
   {
     question: "Do I need to install the Contentful CLI or Node.js?",
@@ -34,9 +44,19 @@ export const FAQS: { question: string; answer: string }[] = [
       "Your Contentful Management API token is encrypted locally by your operating system's secure storage. It never leaves your machine and is never sent to us.",
   },
   {
+    question: "What data do you store about me?",
+    answer:
+      "Only your account identity — your name and email from Google or Microsoft — plus your plan and operation usage, used to manage your plan. We never store your Contentful Management API token or any of your content.",
+  },
+  {
+    question: "Is my content sent to a third party?",
+    answer:
+      "No. Your Contentful content and Management API token flow directly between your computer and Contentful's API — there is no intermediary server or third-party content processing.",
+  },
+  {
     question: "Which Contentful spaces does it work with?",
     answer:
-      "Any organization, space, and environment your CMA token can access. Contentful Manager does not lock you to a single space or plan.",
+      "Any organization, space, and environment your CMA token can access. Contentful Manager does not lock you to a single space.",
   },
   {
     question: "What are the system requirements?",
@@ -52,10 +72,5 @@ export const FAQS: { question: string; answer: string }[] = [
     question: "Windows blocked the app with SmartScreen — how do I open it?",
     answer:
       'The Windows build isn’t code-signed yet, so SmartScreen warns on first launch. Unzip the downloaded file, open the Contentful Manager folder, and double-click Contentful Manager.exe. If a "Windows protected your PC" dialog appears, click "More info" and then "Run anyway" — you only need to do this once.',
-  },
-  {
-    question: "Is my content sent to a third party?",
-    answer:
-      "No. Content flows directly between your computer and Contentful's API. There is no intermediary server, analytics pipeline, or third-party content processing.",
   },
 ];

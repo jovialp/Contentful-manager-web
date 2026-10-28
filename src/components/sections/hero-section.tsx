@@ -25,7 +25,7 @@ export function HeroSection() {
           <DownloadButtons size="lg" className="mt-9 justify-center" />
 
           <p className="mt-5 text-sm text-muted-foreground">
-            Free • Works with any Contentful space • No CLI setup
+            Free plan included • Sign in with Google or Microsoft • Works with any Contentful space
           </p>
         </div>
 

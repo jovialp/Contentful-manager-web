@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { Menu, Moon, Sun, X } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { Logo } from "@/components/logo";
 import { useTheme } from "@/hooks/use-theme";
 
 const links = [
   { href: "#features", label: "Features" },
+  { href: "#pricing", label: "Pricing" },
   { href: "#release-operations", label: "Release Ops" },
   { href: "#how-it-works", label: "How it works" },
   { href: "#download", label: "Download" },
@@ -17,10 +19,15 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-xl">
-      <nav aria-label="Main" className="mx-auto flex max-w-6xl items-center gap-4 px-4 py-3">
+      <nav
+        aria-label="Main"
+        className="mx-auto flex max-w-6xl items-center gap-4 px-4 py-3"
+      >
         <a href="#top" className="flex items-center gap-2.5 rounded-lg">
           <Logo size={32} />
-          <span className="text-[15px] font-bold tracking-tight">Contentful Manager</span>
+          <span className="text-[15px] font-bold tracking-tight">
+            Contentful Manager
+          </span>
         </a>
 
         <ul className="ml-auto hidden items-center gap-1 md:flex">
@@ -40,11 +47,24 @@ export function SiteHeader() {
           <button
             type="button"
             onClick={toggle}
-            aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+            aria-label={
+              theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+            }
             className="rounded-lg border border-border p-2 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
           >
-            {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+            {theme === "dark" ? (
+              <Sun className="h-4 w-4" />
+            ) : (
+              <Moon className="h-4 w-4" />
+            )}
           </button>
+
+          <Link
+            to="/plans"
+            className="hidden rounded-lg border border-border px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:bg-accent sm:inline-flex"
+          >
+            Sign in
+          </Link>
 
           <a
             href="#download"
